@@ -9,39 +9,54 @@
 <body>
     <header>
         <h1>Pathfinder Adventure: Seasons of Ghosts</h1>
+        <nav>
+            <ul>
+                <li><a href="#story">The Story So Far</a></li>
+                <li class="dropdown">
+                    <a href="#characters" class="dropbtn">Characters</a>
+                    <div class="dropdown-content">
+                        <a href="#orone">Orone</a>
+                        <a href="#lillith">Lillith</a>
+                        <a href="#gojukong">Gojukong</a>
+                        <a href="#bodhi">Bodhi</a>
+                        <a href="#genzo">Genzo</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section class="party">
+        <section id="characters" class="party">
             <h2>The Party</h2>
             <div class="characters">
-                <div class="character">
+                <div id="orone" class="character">
                     <img src="Orone.jpg" alt="Orone">
                     <textarea id="orone-description">[Orone's description]</textarea>
                     <button onclick="saveDescription('orone-description')">Save</button>
                 </div>
-                <div class="character">
+                <div id="lillith" class="character">
                     <img src="Lilith.jpg" alt="Lilith">
                     <textarea id="lillith-description">[Lillith's description]</textarea>
                     <button onclick="saveDescription('lillith-description')">Save</button>
                 </div>
-                <div class="character">
+                <div id="gojukong" class="character">
                     <img src="Gojukong.jpg" alt="Gojukong">
                     <textarea id="gojukong-description">[Gojukong's description]</textarea>
                     <button onclick="saveDescription('gojukong-description')">Save</button>
                 </div>
-                <div class="character">
+                <div id="bodhi" class="character">
                     <img src="Bodhi.jpg" alt="Bodhi">
                     <textarea id="bodhi-description">[Bodhi's description]</textarea>
                     <button onclick="saveDescription('bodhi-description')">Save</button>
                 </div>
-                <div class="character">
+                <div id="genzo" class="character">
                     <img src="Genzo.jpg" alt="Genzo">
                     <textarea id="genzo-description">[Genzo's description]</textarea>
                     <button onclick="saveDescription('genzo-description')">Save</button>
                 </div>
             </div>
         </section>
-        <section class="story">
+        <section id="story" class="story">
             <h2>The Story So Far</h2>
             <p>Something strange is happening to your hometown of Willowshore! Nestled on the banks of a river winding through the legendary Specterwood in Tian Xia’s haunted land of Shenmen, the people of Willowshore are no strangers to supernatural threat, but the danger that comes to town on the first day of summer is unlike anything you’ve ever seen before. Over the four seasons to come, you and your fellow home-grown heroes must face evil spirits, sinister fiends, and frightening curses, lest the town of Willowshore succumb to the Season of Ghosts!</p>
         </section>
