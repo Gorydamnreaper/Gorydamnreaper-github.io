@@ -4,66 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pathfinder Adventure</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header style="background-color: rgba(76, 175, 80, 0.8); color: white; text-align: center; padding: 1em 0;">
         <h1>Pathfinder Adventure: Seasons of Ghosts</h1>
         <nav>
-            <ul>
-                <li><a href="#story">The Story So Far</a></li>
-                <li class="dropdown">
-                    <a href="#characters" class="dropbtn">Characters</a>
-                    <div class="dropdown-content">
-                        <a href="#orone">Orone</a>
-                        <a href="#lillith">Lillith</a>
-                        <a href="#gojukong">Gojukong</a>
-                        <a href="#bodhi">Bodhi</a>
-                        <a href="#genzo">Genzo</a>
+            <ul style="list-style: none; padding: 0; text-align: center;">
+                <li style="display: inline; margin-right: 1em;">
+                    <a href="#story" style="color: white; text-decoration: none;">The Story So Far</a>
+                </li>
+                <li style="display: inline; margin-right: 1em; position: relative;">
+                    <a href="#characters" style="color: white; text-decoration: none;" onmouseover="showDropdown()" onmouseout="hideDropdown()">Characters</a>
+                    <div id="dropdown" style="display: none; position: absolute; background-color: rgba(0, 0, 0, 0.8); min-width: 160px;">
+                        <a href="#orone" style="color: white; padding: 12px 16px; text-decoration: none; display: block;">Orone</a>
+                        <a href="#lillith" style="color: white; padding: 12px 16px; text-decoration: none; display: block;">Lillith</a>
+                        <a href="#gojukong" style="color: white; padding: 12px 16px; text-decoration: none; display: block;">Gojukong</a>
+                        <a href="#bodhi" style="color: white; padding: 12px 16px; text-decoration: none; display: block;">Bodhi</a>
+                        <a href="#genzo" style="color: white; padding: 12px 16px; text-decoration: none; display: block;">Genzo</a>
                     </div>
                 </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="characters" class="party">
-            <h2>The Party</h2>
-            <div class="characters">
-                <div id="orone" class="character">
-                    <img src="Orone.jpg" alt="Orone">
-                    <textarea id="orone-description">[Orone's description]</textarea>
+    <main style="padding: 1em; background-color: rgba(0, 0, 0, 0.5); border-radius: 10px; margin: 1em;">
+        <section id="characters" class="party" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 2em;">
+            <h2 style="font-family: 'Georgia', serif;">The Party</h2>
+            <div class="characters" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                <div id="orone" class="character" style="margin: 1em; text-align: center;">
+                    <img src="Orone.jpg" alt="Orone" style="max-width: 150px; border-radius: 8px; border: 2px solid #4CAF50;">
+                    <textarea id="orone-description" style="width: 100%; height: 100px; margin: 0.5em 0;">[Orone's description]</textarea>
                     <button onclick="saveDescription('orone-description')">Save</button>
                 </div>
-                <div id="lillith" class="character">
-                    <img src="Lilith.jpg" alt="Lilith">
-                    <textarea id="lillith-description">[Lillith's description]</textarea>
+                <div id="lillith" class="character" style="margin: 1em; text-align: center;">
+                    <img src="Lilith.jpg" alt="Lilith" style="max-width: 150px; border-radius: 8px; border: 2px solid #4CAF50;">
+                    <textarea id="lillith-description" style="width: 100%; height: 100px; margin: 0.5em 0;">[Lillith's description]</textarea>
                     <button onclick="saveDescription('lillith-description')">Save</button>
                 </div>
-                <div id="gojukong" class="character">
-                    <img src="Gojukong.jpg" alt="Gojukong">
-                    <textarea id="gojukong-description">[Gojukong's description]</textarea>
+                <div id="gojukong" class="character" style="margin: 1em; text-align: center;">
+                    <img src="Gojukong.jpg" alt="Gojukong" style="max-width: 150px; border-radius: 8px; border: 2px solid #4CAF50;">
+                    <textarea id="gojukong-description" style="width: 100%; height: 100px; margin: 0.5em 0;">[Gojukong's description]</textarea>
                     <button onclick="saveDescription('gojukong-description')">Save</button>
                 </div>
-                <div id="bodhi" class="character">
-                    <img src="Bodhi.jpg" alt="Bodhi">
-                    <textarea id="bodhi-description">[Bodhi's description]</textarea>
+                <div id="bodhi" class="character" style="margin: 1em; text-align: center;">
+                    <img src="Bodhi.jpg" alt="Bodhi" style="max-width: 150px; border-radius: 8px; border: 2px solid #4CAF50;">
+                    <textarea id="bodhi-description" style="width: 100%; height: 100px; margin: 0.5em 0;">[Bodhi's description]</textarea>
                     <button onclick="saveDescription('bodhi-description')">Save</button>
                 </div>
-                <div id="genzo" class="character">
-                    <img src="Genzo.jpg" alt="Genzo">
-                    <textarea id="genzo-description">[Genzo's description]</textarea>
+                <div id="genzo" class="character" style="margin: 1em; text-align: center;">
+                    <img src="Genzo.jpg" alt="Genzo" style="max-width: 150px; border-radius: 8px; border: 2px solid #4CAF50;">
+                    <textarea id="genzo-description" style="width: 100%; height: 100px; margin: 0.5em 0;">[Genzo's description]</textarea>
                     <button onclick="saveDescription('genzo-description')">Save</button>
                 </div>
             </div>
         </section>
-        <section id="story" class="story">
-            <h2>The Story So Far</h2>
+        <section id="story" class="story" style="text-align: center; margin: 2em 0; background-color: rgba(224, 224, 224, 0.8); padding: 1em; border-radius: 8px;">
+            <h2 style="font-family: 'Georgia', serif;">The Story So Far</h2>
             <p>Something strange is happening to your hometown of Willowshore! Nestled on the banks of a river winding through the legendary Specterwood in Tian Xia’s haunted land of Shenmen, the people of Willowshore are no strangers to supernatural threat, but the danger that comes to town on the first day of summer is unlike anything you’ve ever seen before. Over the four seasons to come, you and your fellow home-grown heroes must face evil spirits, sinister fiends, and frightening curses, lest the town of Willowshore succumb to the Season of Ghosts!</p>
         </section>
     </main>
-    <footer>
+    <footer style="background-color: rgba(76, 175, 80, 0.8); color: white; text-align: center; padding: 1em 0; position: fixed; width: 100%; bottom: 0;">
         <p>© 2024 Pathfinder Adventure</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        function saveDescription(id) {
+            const description = document.getElementById(id).value;
+            localStorage.setItem(id, description);
+        }
+
+        function loadDescriptions() {
+            const descriptions = ['orone-description', 'lillith-description', 'gojukong-description', 'bodhi-description', 'genzo-description'];
+            descriptions.forEach(id => {
+                const description = localStorage.getItem(id);
+                if (description) {
+                    document.getElementById(id).value = description;
+                }
+            });
+        }
+
+        function showDropdown() {
+            document.getElementById('dropdown').style.display = 'block';
+        }
+
+        function hideDropdown() {
+            document.getElementById('dropdown').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', loadDescriptions);
+    </script>
 </body>
 </html>
