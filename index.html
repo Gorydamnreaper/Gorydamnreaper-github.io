@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pathfinder Adventure: Seasons of Ghosts</title>
     <style>
+        /* Importing fonts */
         @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+        /* General styles for the page */
         body {
             font-family: 'Lato', sans-serif;
             background: #121212;
@@ -15,12 +17,15 @@
             margin: 0;
             padding: 0;
         }
+
+        /* Header and navigation styles */
         header {
             background-color: #1c1f33;
             color: #7fb800;
             text-align: center;
             padding: 1em 0;
         }
+
         nav {
             background-color: #1c1f33;
             display: flex;
@@ -28,23 +33,28 @@
             align-items: center;
             padding: 0 2em;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
             display: flex;
         }
+
         nav ul li {
             margin: 0 1em;
             position: relative;
         }
+
         nav ul li a {
             color: #7fb800;
             text-decoration: none;
             font-size: 1.2em;
         }
+
         nav ul li a:hover {
             text-decoration: underline;
         }
+
         nav ul li .dropdown-content {
             display: none;
             position: absolute;
@@ -52,55 +62,89 @@
             min-width: 160px;
             z-index: 1;
         }
+
         nav ul li .dropdown-content a {
             color: #7fb800;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
+
         nav ul li .dropdown-content a:hover {
             background-color: #3c4050;
         }
+
         nav ul li:hover .dropdown-content {
             display: block;
         }
+
         .logo {
             font-size: 1.5em;
             font-family: 'Nosifer', cursive;
             color: #7fb800;
         }
+
+        .button {
+            background-color: #7fb800;
+            color: #1c1f33;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #9fd900;
+        }
+
+        /* Main content styles */
         main {
             padding: 2em;
         }
+
         .home-page {
             text-align: center;
             padding: 5em 0;
             background: url('homepage.webp') no-repeat center center;
             background-size: cover;
+            position: relative;
         }
+
         .home-page h2 {
             color: white;
             font-size: 3em;
         }
+
         .home-page p {
             color: white;
             font-size: 1.5em;
             max-width: 800px;
             margin: 0 auto;
         }
+
+        /* Add background music */
+        audio {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
         .party {
             margin: 2em 0;
         }
+
         .party h2 {
             font-family: 'Nosifer', cursive;
             color: #7fb800;
             text-align: center;
         }
+
         .characters {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
+
         .character {
             background-color: rgba(28, 31, 51, 0.8);
             padding: 1em;
@@ -108,12 +152,24 @@
             margin: 1em;
             text-align: center;
             width: 200px;
+            transition: transform 0.2s;
         }
+
+        .character:hover {
+            transform: scale(1.05);
+        }
+
         .character img {
             max-width: 100%;
             border-radius: 8px;
             border: 2px solid #7fb800;
+            transition: transform 0.2s;
         }
+
+        .character img:hover {
+            transform: rotate(5deg);
+        }
+
         .character textarea {
             width: 100%;
             height: 100px;
@@ -124,6 +180,7 @@
             background-color: #1c1f33;
             color: #f4f4f9;
         }
+
         .character button {
             background-color: #7fb800;
             color: #1c1f33;
@@ -132,20 +189,24 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
         .character button:hover {
             background-color: #9fd900;
         }
+
         .story {
             background-color: rgba(28, 31, 51, 0.8);
             padding: 2em;
             border-radius: 8px;
             margin: 2em 0;
         }
+
         .story h2 {
             font-family: 'Nosifer', cursive;
             color: #7fb800;
             text-align: center;
         }
+
         .story p {
             max-width: 800px;
             margin: 0 auto;
@@ -153,6 +214,7 @@
             line-height: 1.5em;
             color: #f4f4f9;
         }
+
         footer {
             background-color: #1c1f33;
             color: #7fb800;
@@ -188,35 +250,39 @@
     <main>
         <section id="home" class="home-page">
             <h2>Pathfinder Adventure: Seasons of Ghosts</h2>
-            <img src="group.jpg" alt="Group Image" style="width: 100%; border-radius: 10px; margin-top: 20px;">
             <p>Something strange is happening to your hometown of Willowshore! Nestled on the banks of a river winding through the legendary Specterwood in Tian Xia’s haunted land of Shenmen, the people of Willowshore are no strangers to supernatural threat, but the danger that comes to town on the first day of summer is unlike anything you’ve ever seen before. Over the four seasons to come, you and your fellow home-grown heroes must face evil spirits, sinister fiends, and frightening curses, lest the town of Willowshore succumb to the Season of Ghosts!</p>
+            <!-- Background music for ambiance -->
+            <audio controls loop>
+                <source src="pathfinder_theme.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </section>
         <section id="characters" class="party">
             <h2>The Party</h2>
             <div class="characters">
                 <div id="orone" class="character">
                     <img src="Orone.jpg" alt="Orone">
-                    <textarea id="orone-description">[Orone's description]</textarea>
+                    <textarea id="orone-description">Orone is a mystical fox character with cosmic patterns. He's known for his agility and mystic abilities, always ready to defend his friends.</textarea>
                     <button onclick="saveDescription('orone-description')">Save</button>
                 </div>
                 <div id="lillith" class="character">
                     <img src="Lilith.jpg" alt="Lillith">
-                    <textarea id="lillith-description">[Lillith's description]</textarea>
+                    <textarea id="lillith-description">Lillith is a fierce warrior clad in silver armor with piercing red eyes. Her swordsmanship is unmatched, and she fights with relentless determination.</textarea>
                     <button onclick="saveDescription('lillith-description')">Save</button>
                 </div>
                 <div id="gojukong" class="character">
                     <img src="Gojukong.jpg" alt="Gojukong">
-                    <textarea id="gojukong-description">[Gojukong's description]</textarea>
+                    <textarea id="gojukong-description">Gojukong, the vanara with a heart as big as his courage. His long tail and agile moves make him a formidable fighter in any battle.</textarea>
                     <button onclick="saveDescription('gojukong-description')">Save</button>
                 </div>
                 <div id="bodhi" class="character">
                     <img src="Bodhi.jpg" alt="Bodhi">
-                    <textarea id="bodhi-description">[Bodhi's description]</textarea>
+                    <textarea id="bodhi-description">Bodhi, the monk who has lived in Willowshore all his life. With deep respect for the supernatural and a love for tea, he brings wisdom and calm to the group.</textarea>
                     <button onclick="saveDescription('bodhi-description')">Save</button>
                 </div>
                 <div id="genzo" class="character">
                     <img src="Genzo.jpg" alt="Genzo">
-                    <textarea id="genzo-description">[Genzo's description]</textarea>
+                    <textarea id="genzo-description">Genzo, the tattooed warrior with a mysterious past. His strategic mind and strength are crucial assets in their quest against the supernatural forces.</textarea>
                     <button onclick="saveDescription('genzo-description')">Save</button>
                 </div>
             </div>
@@ -246,11 +312,13 @@
         <p>© 2024 Pathfinder Adventure</p>
     </footer>
     <script>
+        // Save character description to local storage
         function saveDescription(id) {
             const description = document.getElementById(id).value;
             localStorage.setItem(id, description);
         }
 
+        // Load character descriptions from local storage on page load
         function loadDescriptions() {
             const descriptions = ['orone-description', 'lillith-description', 'gojukong-description', 'bodhi-description', 'genzo-description'];
             descriptions.forEach(id => {
@@ -261,6 +329,7 @@
             });
         }
 
+        // Ensure descriptions are loaded when the document is ready
         document.addEventListener('DOMContentLoaded', loadDescriptions);
     </script>
 </body>
