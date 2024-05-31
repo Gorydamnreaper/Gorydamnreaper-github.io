@@ -215,7 +215,28 @@
             color: #f4f4f9;
         }
 
-        footer {
+        .interactive-map {
+            margin: 2em 0;
+            text-align: center;
+        }
+
+        .npc-database, .campaign-calendar, .resource-library, .encounter-builder, .session-logs, .community, .player-tools {
+            margin: 2em 0;
+        }
+
+        .npc-database h2, .campaign-calendar h2, .resource-library h2, .encounter-builder h2, .session-logs h2, .community h2, .player-tools h2 {
+            font-family: 'Nosifer', cursive;
+            color: #7fb800;
+            text-align: center;
+        }
+
+        .interactive-map img, .npc-database img, .campaign-calendar img, .resource-library img, .encounter-builder img, .session-logs img, .community img, .player-tools img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 2px solid #7fb800;
+        }
+
+        .footer {
             background-color: #1c1f33;
             color: #7fb800;
             text-align: center;
@@ -243,6 +264,8 @@
                         <a href="#genzo">Genzo</a>
                     </div>
                 </li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#community">Community</a></li>
             </ul>
             <a href="#" class="button">Become a Member</a>
         </nav>
@@ -307,6 +330,75 @@
 
             <p>And so, the story of Willowshore continues, with our heroes standing firm against the spectral visitors and sinister forces. It is a reminder that even in the face of the unknown, courage, wisdom, and camaraderie can light the way through the shadows.</p>
         </section>
+
+        <!-- Interactive Map Section -->
+        <section id="interactive-map" class="interactive-map">
+            <h2>Interactive Map</h2>
+            <img src="map.jpg" alt="Interactive Map">
+            <!-- Add map functionality here -->
+        </section>
+
+        <!-- NPC Database Section -->
+        <section id="npc-database" class="npc-database">
+            <h2>NPC Database</h2>
+            <p>Search for NPCs by name or browse the list of all encountered NPCs.</p>
+            <input type="text" id="npc-search" placeholder="Search NPCs...">
+            <div id="npc-list">
+                <!-- NPC entries will go here -->
+            </div>
+        </section>
+
+        <!-- Campaign Calendar Section -->
+        <section id="campaign-calendar" class="campaign-calendar">
+            <h2>Campaign Calendar</h2>
+            <img src="calendar.jpg" alt="Campaign Calendar">
+            <!-- Add calendar functionality here -->
+        </section>
+
+        <!-- Resource Library Section -->
+        <section id="resource-library" class="resource-library">
+            <h2>Resource Library</h2>
+            <p>Download resources, house rules, and game supplements.</p>
+            <div id="resource-list">
+                <!-- Resource entries will go here -->
+            </div>
+        </section>
+
+        <!-- Encounter Builder Section -->
+        <section id="encounter-builder" class="encounter-builder">
+            <h2>Encounter Builder</h2>
+            <p>Create and save encounters with enemy stats and environmental details.</p>
+            <div id="encounter-list">
+                <!-- Encounter entries will go here -->
+            </div>
+        </section>
+
+        <!-- Session Logs Section -->
+        <section id="session-logs" class="session-logs">
+            <h2>Session Logs</h2>
+            <p>Read detailed logs and notes from each session.</p>
+            <div id="session-log-list">
+                <!-- Session log entries will go here -->
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="community">
+            <h2>Community</h2>
+            <p>Join the discussion, share fan art, and roleplay outside of sessions.</p>
+            <div id="community-board">
+                <!-- Community posts will go here -->
+            </div>
+        </section>
+
+        <!-- Player Tools Section -->
+        <section id="player-tools" class="player-tools">
+            <h2>Player Tools</h2>
+            <p>Manage character sheets, track experience, and more.</p>
+            <div id="player-tools-list">
+                <!-- Player tools entries will go here -->
+            </div>
+        </section>
     </main>
     <footer>
         <p>© 2024 Pathfinder Adventure</p>
@@ -331,6 +423,8 @@
 
         // Ensure descriptions are loaded when the document is ready
         document.addEventListener('DOMContentLoaded', loadDescriptions);
+
+        // Additional functionality for NPC search, calendar, resources, encounters, session logs, community board, and player tools can be implemented here.
     </script>
 </body>
 </html>
