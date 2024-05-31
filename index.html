@@ -10,8 +10,7 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            background: url('spooky.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background: #121212;
             color: #f4f4f9;
             margin: 0;
             padding: 0;
@@ -22,14 +21,20 @@
             text-align: center;
             padding: 1em 0;
         }
+        nav {
+            background-color: #1c1f33;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2em;
+        }
         nav ul {
             list-style: none;
             padding: 0;
-            text-align: center;
+            display: flex;
         }
         nav ul li {
-            display: inline;
-            margin-right: 1em;
+            margin: 0 1em;
             position: relative;
         }
         nav ul li a {
@@ -45,6 +50,7 @@
             position: absolute;
             background-color: #1c1f33;
             min-width: 160px;
+            z-index: 1;
         }
         nav ul li .dropdown-content a {
             color: #7fb800;
@@ -58,21 +64,37 @@
         nav ul li:hover .dropdown-content {
             display: block;
         }
-        main {
-            padding: 1em;
-            background-color: rgba(28, 31, 51, 0.8);
-            border-radius: 10px;
-            margin: 1em;
-        }
-        h1, h2 {
+        .logo {
+            font-size: 1.5em;
             font-family: 'Nosifer', cursive;
             color: #7fb800;
         }
+        main {
+            padding: 2em;
+        }
+        .home-page {
+            text-align: center;
+            padding: 5em 0;
+            background: url('homepage.webp') no-repeat center center;
+            background-size: cover;
+        }
+        .home-page h2 {
+            color: white;
+            font-size: 3em;
+        }
+        .home-page p {
+            color: white;
+            font-size: 1.5em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
         .party {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 2em;
+            margin: 2em 0;
+        }
+        .party h2 {
+            font-family: 'Nosifer', cursive;
+            color: #7fb800;
+            text-align: center;
         }
         .characters {
             display: flex;
@@ -80,11 +102,11 @@
             flex-wrap: wrap;
         }
         .character {
-            margin: 1em;
-            text-align: center;
             background-color: rgba(28, 31, 51, 0.8);
             padding: 1em;
             border-radius: 8px;
+            margin: 1em;
+            text-align: center;
             width: 200px;
         }
         .character img {
@@ -114,18 +136,22 @@
             background-color: #9fd900;
         }
         .story {
-            text-align: center;
-            margin: 2em 0;
-            background-color: rgba(224, 224, 224, 0.8);
-            padding: 1em;
+            background-color: rgba(28, 31, 51, 0.8);
+            padding: 2em;
             border-radius: 8px;
+            margin: 2em 0;
+        }
+        .story h2 {
+            font-family: 'Nosifer', cursive;
+            color: #7fb800;
+            text-align: center;
         }
         .story p {
             max-width: 800px;
             margin: 0 auto;
             font-size: 1.2em;
             line-height: 1.5em;
-            color: #1c1f33;
+            color: #f4f4f9;
         }
         footer {
             background-color: #1c1f33;
@@ -136,27 +162,11 @@
             width: 100%;
             bottom: 0;
         }
-        .home-page {
-            text-align: center;
-            background: url('homepage.webp') no-repeat center center;
-            background-size: cover;
-            padding: 5em 0;
-        }
-        .home-page h2 {
-            color: white;
-            font-size: 3em;
-        }
-        .home-page p {
-            color: white;
-            font-size: 1.5em;
-            max-width: 800px;
-            margin: 0 auto;
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Pathfinder Adventure: Seasons of Ghosts</h1>
+        <div class="logo">Pathfinder Adventure: Seasons of Ghosts</div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -172,11 +182,13 @@
                     </div>
                 </li>
             </ul>
+            <a href="#" class="button">Become a Member</a>
         </nav>
     </header>
     <main>
         <section id="home" class="home-page">
             <h2>Pathfinder Adventure: Seasons of Ghosts</h2>
+            <img src="group.jpg" alt="Group Image" style="width: 100%; border-radius: 10px; margin-top: 20px;">
             <p>Something strange is happening to your hometown of Willowshore! Nestled on the banks of a river winding through the legendary Specterwood in Tian Xia’s haunted land of Shenmen, the people of Willowshore are no strangers to supernatural threat, but the danger that comes to town on the first day of summer is unlike anything you’ve ever seen before. Over the four seasons to come, you and your fellow home-grown heroes must face evil spirits, sinister fiends, and frightening curses, lest the town of Willowshore succumb to the Season of Ghosts!</p>
         </section>
         <section id="characters" class="party">
@@ -188,7 +200,7 @@
                     <button onclick="saveDescription('orone-description')">Save</button>
                 </div>
                 <div id="lillith" class="character">
-                    <img src="Lilith.jpg" alt="Lilith">
+                    <img src="Lilith.jpg" alt="Lillith">
                     <textarea id="lillith-description">[Lillith's description]</textarea>
                     <button onclick="saveDescription('lillith-description')">Save</button>
                 </div>
@@ -209,27 +221,26 @@
                 </div>
             </div>
         </section>
-      <section id="story" class="story">
-    <h2>The Story So Far</h2>
-    <p>Once upon a time, in the tranquil town of Willowshore, nestled in the haunted land of Shenmen, a peculiar mystery began to unfold. It was a place where whispers of spirits and shadows of the past were as common as the rustling of leaves. Yet, the arrival of summer brought with it an unsettling change, one that even the most seasoned inhabitants had never seen before.</p>
+        <section id="story" class="story">
+            <h2>The Story So Far</h2>
+            <p>Once upon a time, in the tranquil town of Willowshore, nestled in the haunted land of Shenmen, a peculiar mystery began to unfold. It was a place where whispers of spirits and shadows of the past were as common as the rustling of leaves. Yet, the arrival of summer brought with it an unsettling change, one that even the most seasoned inhabitants had never seen before.</p>
 
-    <p>As the sun cast its first summer rays, a creeping mist enveloped the town, and with it, tales of eerie apparitions and malevolent beings began to surface. Willowshore, cradled by the enigmatic Specterwood, found itself at the heart of a supernatural storm. From the depths of the forest came whispers of curses and sightings of fiendish creatures, shattering the fragile peace of the town.</p>
+            <p>As the sun cast its first summer rays, a creeping mist enveloped the town, and with it, tales of eerie apparitions and malevolent beings began to surface. Willowshore, cradled by the enigmatic Specterwood, found itself at the heart of a supernatural storm. From the depths of the forest came whispers of curses and sightings of fiendish creatures, shattering the fragile peace of the town.</p>
 
-    <p>In these trying times, a band of heroes rose from among the townsfolk—individuals of courage, wisdom, and heart. Led by Gojukong, the Vanara with a tail as long as his bravery, they ventured into the shadowy woods, facing specters and sinister forces. Alongside him were Orone, almost felled by his own stuffed animal, and Lilith, whose blade shone bright even in the deepest darkness. Together, they forged ahead, their resolve unshaken by the eerie occurrences that plagued their homeland.</p>
+            <p>In these trying times, a band of heroes rose from among the townsfolk—individuals of courage, wisdom, and heart. Led by Gojukong, the Vanara with a tail as long as his bravery, they ventured into the shadowy woods, facing specters and sinister forces. Alongside him were Orone, almost felled by his own stuffed animal, and Lilith, whose blade shone bright even in the deepest darkness. Together, they forged ahead, their resolve unshaken by the eerie occurrences that plagued their homeland.</p>
 
-    <p>Joining them was Bodhi, a monk who had lived in Willowshore since birth. Bodhi's respect for the supernatural and his deep knowledge of local traditions proved invaluable. Known for his calm demeanor and love for tea, Bodhi often found solace and clarity in the simple act of brewing and sharing a cup of tea. His presence brought a sense of tranquility to the group, even in the face of dire threats.</p>
+            <p>Joining them was Bodhi, a monk who had lived in Willowshore since birth. Bodhi's respect for the supernatural and his deep knowledge of local traditions proved invaluable. Known for his calm demeanor and love for tea, Bodhi often found solace and clarity in the simple act of brewing and sharing a cup of tea. His presence brought a sense of tranquility to the group, even in the face of dire threats.</p>
 
-    <p>Genzo, the tattooed warrior with an enigmatic past, added his strength and tactical mind to the mix. Standing firm with his friends, Genzo's strategic prowess and unwavering loyalty were crucial in the battles they faced. His intricate tattoos told stories of his own journey and served as a reminder of the resilience and spirit required to overcome the darkness that threatened their town.</p>
+            <p>Genzo, the tattooed warrior with an enigmatic past, added his strength and tactical mind to the mix. Standing firm with his friends, Genzo's strategic prowess and unwavering loyalty were crucial in the battles they faced. His intricate tattoos told stories of his own journey and served as a reminder of the resilience and spirit required to overcome the darkness that threatened their town.</p>
 
-    <p>Their journey was fraught with peril. From the whispers of the old Matsuki, they learned of the cursed lantern, extinguished and casting the town into mist and fog. They battled centipedes with venom potent enough to bring a warrior to his knees and confronted creatures straight out of nightmares. Yet, their greatest challenge was the enigmatic red glow emanating from the top of the basalt tower known as Mother’s Coil, a relic of a tragic wizard's experiment gone awry.</p>
+            <p>Their journey was fraught with peril. From the whispers of the old Matsuki, they learned of the cursed lantern, extinguished and casting the town into mist and fog. They battled centipedes with venom potent enough to bring a warrior to his knees and confronted creatures straight out of nightmares. Yet, their greatest challenge was the enigmatic red glow emanating from the top of the basalt tower known as Mother’s Coil, a relic of a tragic wizard's experiment gone awry.</p>
 
-    <p>Among the trials, they faced illusions that played tricks on their minds—a whirlwind of papers from an enemy wizard’s spellbook, a jail cell of cannons, and bridges that were more traps than pathways. Their wisdom was tested by the Abacus sisters in a game of wits, and their might by the formidable Buso, Gurglegut. With each encounter, they grew stronger, their bonds deepening as they sought to lift the curses and uncover the truths hidden in the shadows.</p>
+            <p>Among the trials, they faced illusions that played tricks on their minds—a whirlwind of papers from an enemy wizard’s spellbook, a jail cell of cannons, and bridges that were more traps than pathways. Their wisdom was tested by the Abacus sisters in a game of wits, and their might by the formidable Buso, Gurglegut. With each encounter, they grew stronger, their bonds deepening as they sought to lift the curses and uncover the truths hidden in the shadows.</p>
 
-    <p>As the first days of summer turned to weeks, they adhered to the Eight Practices of Willowshore, superstitions held dearly by the townsfolk. These practices, whether truly effective or not, became a part of their ritual—a means to connect with the spirit of their land and its people. The heroes' journey is a testament to their bravery and unity, a tale where the line between illusion and reality blurred, and the true power lay in the human spirit's ability to shine through the darkest of times.</p>
+            <p>As the first days of summer turned to weeks, they adhered to the Eight Practices of Willowshore, superstitions held dearly by the townsfolk. These practices, whether truly effective or not, became a part of their ritual—a means to connect with the spirit of their land and its people. The heroes' journey is a testament to their bravery and unity, a tale where the line between illusion and reality blurred, and the true power lay in the human spirit's ability to shine through the darkest of times.</p>
 
-    <p>And so, the story of Willowshore continues, with our heroes standing firm against the spectral visitors and sinister forces. It is a reminder that even in the face of the unknown, courage, wisdom, and camaraderie can light the way through the shadows.</p>
-</section>
-
+            <p>And so, the story of Willowshore continues, with our heroes standing firm against the spectral visitors and sinister forces. It is a reminder that even in the face of the unknown, courage, wisdom, and camaraderie can light the way through the shadows.</p>
+        </section>
     </main>
     <footer>
         <p>© 2024 Pathfinder Adventure</p>
